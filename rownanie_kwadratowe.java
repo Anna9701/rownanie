@@ -33,11 +33,12 @@ class Rownanie{
 	}
 		
 	void oblicz(){
-		delta = Math.sqrt(b*b - (4*a*c));
-						
-		if(Double.isNaN(delta))
+		delta = b*b - (4*a*c);
+		
+		if(delta == 0)
 			result1 = -b/(2*a);
-		else{
+		else if (delta > 0){
+			delta = Math.sqrt(delta);
 			result1 = (-b-delta)/(2*a);
 			result2 = (-b+delta)/(2*a);
 		}
